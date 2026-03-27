@@ -10,10 +10,10 @@ public class PaymentRequest {
     @NotBlank(message = "Metode harus diisi")
     private String method; // Contoh: "GOPAY", "CREDIT_CARD"
 
-    //Khusus CC
     @Min(value = 1000, message = "Minimal Rp1.000")
     private double amount;
 
+    //Khusus CC
     @NotBlank(groups = OnCreditCard.class, message = "Nomor kartu wajib")
     private String cardNumber;
 
