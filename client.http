@@ -1,0 +1,39 @@
+### Bayar dengan gopay
+POST http://localhost:8080/checkout
+Content-Type: application/json
+
+{
+    "method": "GOPAY",
+    "amount": 10022,
+    "phoneNumber": "0811223344"
+}
+
+### Bayar dengan gopay - phone number tidak diisi
+POST http://localhost:8080/checkout
+Content-Type: application/json
+
+{
+    "method": "GOPAY",
+    "amount": 10022
+}
+
+### Bayar dengan gopay - nominal salah
+POST http://localhost:8080/checkout
+Content-Type: application/json
+
+{
+    "method": "GOPAY",
+    "amount": 900,
+    "phoneNumber": "0811223344"
+}
+
+### Bayar dengan kartu credit
+POST http://localhost:8080/checkout
+Content-Type: application/json
+
+{
+    "method": "CREDIT_CARD",
+    "amount": 10022,
+    "cvv": "222",
+    "cardNumber": "6677112233"
+}
